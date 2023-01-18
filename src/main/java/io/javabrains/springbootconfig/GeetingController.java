@@ -23,8 +23,8 @@ public class GeetingController {
     @Value("${my.list.values}")
     private List<String> listValues;
 
-    @Value("#{${dbValues}}")
-    private Map<String, String> dbValues;
+//    @Value("#{${dbValues}}")
+//    private Map<String, String> dbValues;
 
     @Autowired
     private DbSettings dbSettings;
@@ -36,6 +36,7 @@ public class GeetingController {
 
     @GetMapping("/greeting")
     public String greeting() {
-        return greetingMessage + " " + greetingsMessage + " " + staticMessage + " " + listValues + " " + dbValues;
+        return greetingMessage + " " + greetingsMessage + " " + staticMessage + " " + listValues + " ";
+//        + dbValues;
     }
 }
